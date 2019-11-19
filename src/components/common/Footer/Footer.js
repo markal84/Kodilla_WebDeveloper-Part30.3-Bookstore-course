@@ -5,11 +5,11 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to='/'>Home</Link>
-        <Link to='/faq'>Faq</Link>
-        <Link to='/terms'>Terms</Link>
-        <Link to='/contact'>Contact</Link>
+      <div className="d-inline-flex text-uppercase">
+        <Link to='/' className="nav-link active">Home</Link>
+        <Link to='/faq' className="nav-link active">Faq</Link>
+        <Link to='/terms' className="nav-link active">Terms</Link>
+        <Link to='/contact' className="nav-link active">Contact</Link>
       </div>
     );
   }

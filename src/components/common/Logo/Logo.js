@@ -1,7 +1,9 @@
 import React from 'react';
 
+import logoimg from '../../../images/logo/logo.jpg'
+
 const Logo = () => (
-    <h3>Shop name/logo</h3>
+    <a href="/" className="navbar-brand"><img src={logoimg} alt="Computer shop"></img></a>
   );
 
 export default Logo;
