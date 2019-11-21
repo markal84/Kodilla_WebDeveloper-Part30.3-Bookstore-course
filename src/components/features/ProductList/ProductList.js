@@ -7,15 +7,15 @@ class ProductList extends Component{
     render() {
         let itemList = this.props.items.map(item=>{
             return(
-                <div key={item.id}>
+                <div key={item.id} className="card">
                         <div>
-                            <img src={item.img} className="img-thumbnail" alt={item.name}/>
-                            <span>{item.brand}</span>
-                            <span to="/" className="btn btn-light">add</span>
+                            <img src={item.img} className="card-img-top" alt={item.name}/>
                         </div>
-      
-                        <div>
-                            <p>{item.desc}</p>
+                        <div className="card-body">
+                            <h5 className="card-title">{ item.name}</h5>
+                            <span>{item.brand}</span>
+                            <span to="/" className="btn btn-light">add to cart</span>
+                            <p className="card-text">{item.desc}</p>
                             <p><b>Price: {item.price}$</b></p>
                             <p>Old price: {item.oldPrice}$</p>
                             <p>{item.extra}</p>
