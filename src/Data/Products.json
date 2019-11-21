@@ -1,12 +1,23 @@
 [
     {
         "id": 1,
-        "brand": "test brand",
         "name": "test name",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula augue, lobortis ut dolor in, rhoncus lacinia massa. Sed id elementum velit, porttitor semper risus. Fusce tristique, eros et molestie interdum, felis erat convallis risus, vitae pharetra leo sem non lacus. Morbi sed nunc sit amet diam pharetra maximus. Proin congue dictum eros, eget sollicitudin tellus dapibus eu. Vestibulum eu placerat mauris. Aenean rhoncus, mi sed pulvinar fermentum, tellus massa auctor nisl, nec fermentum mi sem sit amet turpis.",
+        "brand": "test brand",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula augue, lobortis ut dolor in, rhoncus lacinia massa. Sed id elementum velit, porttitor semper risus. Fusce tristique, eros et molestie interdum, felis erat convallis risus, vitae pharetra leo sem non lacus. Morbi sed nunc sit amet diam pharetra maximus. Proin congue dictum eros, eget sollicitudin tellus dapibus eu. Vestibulum eu placerat mauris. Aenean rhoncus, mi sed pulvinar fermentum, tellus massa auctor nisl, nec fermentum mi sem sit amet turpis.",
         "price": 100,
-        "old price": 124,
-        "extra": ["promocja","nowość"],
-        "image": "https://postimg.cc/PPgNQKPH"
+        "oldPrice": 124,
+        "extra": ["promocja", " nowość"],
+        "img": "https://i.postimg.cc/t4Lk1q1h/1.jpg"
+
+    },
+    {
+        "id": 2,
+        "name": "test name2",
+        "brand": "test brand2",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula augue, lobortis ut dolor in, rhoncus lacinia massa. Sed id elementum velit, porttitor semper risus. Fusce tristique, eros et molestie interdum, felis erat convallis risus, vitae pharetra leo sem non lacus. Morbi sed nunc sit amet diam pharetra maximus. Proin congue dictum eros, eget sollicitudin tellus dapibus eu. Vestibulum eu placerat mauris. Aenean rhoncus, mi sed pulvinar fermentum, tellus massa auctor nisl, nec fermentum mi sem sit amet turpis.",
+        "price": 85,
+        "oldPrice": 144,
+        "extra": ["promocja"],
+        "img": "Image1"
     }
 ]
