@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
+import { addToCart } from '../../../actions/actions'
 
 class ProductList extends Component{
+
+    handleClick = (id)=>{
+        this.props.addToCart(id);
+    }
 
     render() {
         let itemList = this.props.items.map(item=>{
@@ -14,7 +18,7 @@ class ProductList extends Component{
                         <div className="card-body">
                             <h5 className="card-title">{ item.name}</h5>
                             <span>{item.brand}</span>
-                            <span to="/" className="btn btn-light">add to cart</span>
+                            <span to="/" className="btn btn-light" onClick={()=>{this.handleClick(item.id)}}>add to cart</span>
                             <p className="card-text">{item.desc}</p>
                             <p><b>Price: {item.price}$</b></p>
                             <p>Old price: {item.oldPrice}$</p>
@@ -38,6 +42,12 @@ const mapStateToProps = (state)=>{
         items: state.items
         }
 }
+
+const mapDispatchToProps= (dispatch)=>{
+    
+    return{
+        addToCart: (id)=>{dispatch(addToCart(id))}
+    }
+}
   
-  
-export default connect(mapStateToProps)(ProductList)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList)

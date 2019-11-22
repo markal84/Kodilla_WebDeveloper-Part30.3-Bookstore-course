@@ -5,17 +5,24 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
 
-import cartReducer from './components/reducers/CartReducer';
+import cartReducer from './redux/reducers';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 
 const Root = () => (
-    <Router>
-        <App />
-    </Router>
+    <Provider store={store}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>    
 );
+
+// combine reducers - problematic part
+/*const rootReducer = combineReducers({
+    cartReducer,
+}); */
 
 const store = createStore(cartReducer);
 
-ReactDOM.render(<Provider store={store}><Root /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));

@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Logo from '../../common/Logo/Logo';
-import Cart from '../../features/Cart/Cart'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 import './NavBar.scss' //if not needed delete it, try to find solution to active/visited links react bootstrap
 
@@ -17,7 +18,7 @@ class NavBar extends React.Component {
           <NavLink to='/faq' className="nav-link">Faq</NavLink>
           <NavLink to='/terms' className="nav-link">Terms</NavLink>
           <NavLink to='/contact' className="nav-link">Contact</NavLink>
-          <Cart />
+          <NavLink to='/cart' className="nav-link">Cart<FontAwesomeIcon className='cart-icon' icon={faCartPlus}/></NavLink>
         </ul>
       </nav>   
     );
