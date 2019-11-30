@@ -1,5 +1,5 @@
 import Products from '../Data/Products.json'
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/actionTypes'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY, ADD_SHIPPING, SUB_SHIPPING } from '../actions/actionTypes'
 
 const initState = {
     items: Products, // this is a .json file in data/Products
@@ -88,10 +88,27 @@ const cartReducer= (state = initState,action)=>{
                 total: newTotal,
                 //quantity: state.quantity - 1
             }
-        }
-        
+        }   
     }
-    return state
+
+    if(action.type=== ADD_SHIPPING){
+        return{
+            ...state,
+            total: state.total + 6
+        }
+    }
+
+    if(action.type=== SUB_SHIPPING){
+      return{
+          ...state,
+          total: state.total - 6
+        }
+    }
+
+    else {
+        return state
+    }
+    
 }
 
 export default cartReducer
