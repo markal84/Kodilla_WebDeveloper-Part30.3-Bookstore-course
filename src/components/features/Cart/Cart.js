@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeItem,addQuantity,subtractQuantity} from '../../../actions/actions';
-import Recipe from '../../features/Total/Total';
+import Total from '../../features/Total/Total';
 class Cart extends Component{
 
     //to remove the item completely
@@ -41,7 +41,7 @@ class Cart extends Component{
                                         </div>
                                         <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
                                     </div>
-                                    < Recipe />                                
+                                    < Total />                                
                                 </li>
                                               
                     )

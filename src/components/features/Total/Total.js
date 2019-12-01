@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import shippingCost from './ShipppingCost'
 
-class Recipe extends Component{
+class Total extends Component{
 
     componentWillUnmount() {
             if(this.refs.shipping.checked)
@@ -24,7 +25,7 @@ class Recipe extends Component{
                     <li className="collection-item">
                         <label>
                             <input type="checkbox" ref="shipping" onChange= {this.handleChecked} />
-                            <span>Shipping(+6$)</span>
+                            <span>Shipping(+{ shippingCost }$)</span>
                         </label>
                     </li>
                     <li className="collection-item"><b>Total: {this.props.total} $</b></li>
@@ -51,4 +52,4 @@ const mapDispatchToProps = (dispatch)=>{
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Recipe)
+export default connect(mapStateToProps,mapDispatchToProps)(Total)

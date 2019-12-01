@@ -1,11 +1,11 @@
 import Products from '../Data/Products.json'
 import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY, ADD_SHIPPING, SUB_SHIPPING } from '../actions/actionTypes'
+import shippingCost from '../components/features/Total/ShipppingCost'
 
 const initState = {
     items: Products, // this is a .json file in data/Products
     addedItems:[],
     total: 0
-
 }
 
 const cartReducer= (state = initState,action)=>{
@@ -94,14 +94,14 @@ const cartReducer= (state = initState,action)=>{
     if(action.type=== ADD_SHIPPING){
         return{
             ...state,
-            total: state.total + 6
+            total: state.total + shippingCost 
         }
     }
 
     if(action.type=== SUB_SHIPPING){
       return{
           ...state,
-          total: state.total - 6
+          total: state.total - shippingCost
         }
     }
 
@@ -111,4 +111,4 @@ const cartReducer= (state = initState,action)=>{
     
 }
 
-export default cartReducer
+export default cartReducer;
