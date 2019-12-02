@@ -5,7 +5,8 @@ import shippingCost from '../components/features/Total/ShipppingCost'
 const initState = {
     items: Products, // this is a .json file in data/Products
     addedItems:[],
-    total: 0
+    total: 0,
+    quantity: 0
 }
 
 const cartReducer= (state = initState,action)=>{
@@ -60,7 +61,7 @@ const cartReducer= (state = initState,action)=>{
           return{
               ...state,
               total: newTotal,
-              //quantity: state.quantity + 1
+              quantity: state.quantity + 1
           }
     }
     if(action.type=== SUB_QUANTITY){  
@@ -75,7 +76,7 @@ const cartReducer= (state = initState,action)=>{
                 ...state,
                 addedItems: new_items,
                 total: newTotal,
-                //quantity: state.quantity - 1
+                quantity: state.quantity - 1
             }
         }
         else {
