@@ -22,13 +22,15 @@ class Total extends Component{
         return(
             <div className="container">
                 <div className="collection">
-                    <li className="collection-item">
-                        <label>
-                            <input type="checkbox" ref="shipping" onChange= {this.handleChecked} />
-                            <span>Shipping(+{ shippingCost }$)</span>
-                        </label>
-                    </li>
-                    <li className="collection-item"><b>Total: {this.props.total} $</b></li>
+                    <ul>
+                        <li className="collection-item">
+                            <label>
+                                <input type="checkbox" ref="shipping" onChange= {this.handleChecked} />
+                                <span>Shipping(+{ shippingCost }$)</span>
+                            </label>
+                        </li>
+                        <li className="collection-item"><b>Total: {this.props.total} $</b></li>
+                    </ul>
                     </div>
                     <div className="checkout">
                         <button className="waves-effect waves-light btn">Checkout</button>

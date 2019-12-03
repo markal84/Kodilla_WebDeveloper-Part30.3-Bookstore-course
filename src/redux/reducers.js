@@ -18,11 +18,10 @@ const cartReducer= (state = initState,action)=>{
          console.log('item added to cart')
          if(existed_item)
          {
-            addedItem.quantity += 1 // does not update quantity in cart
+            addedItem.quantity += 1 
              return{
                 ...state,
-                 total: state.total + addedItem.price,
-                 //quantity: state.quantity + 1 
+                 total: state.total + addedItem.price,              
                   }
         }
          else{
@@ -34,7 +33,6 @@ const cartReducer= (state = initState,action)=>{
                 ...state,
                 addedItems: [...state.addedItems, addedItem],
                 total : newTotal,
-                //quantity: state.quantity + 1
             }  
         }
     }
@@ -59,8 +57,8 @@ const cartReducer= (state = initState,action)=>{
           console.log(addedItem.quantity);
           return{
               ...state,
+              addedItems: [...state.addedItems],
               total: newTotal,
-              //quantity: state.quantity + 1
           }
     }
     if(action.type=== SUB_QUANTITY){  
@@ -75,7 +73,6 @@ const cartReducer= (state = initState,action)=>{
                 ...state,
                 addedItems: new_items,
                 total: newTotal,
-                //quantity: state.quantity - 1
             }
         }
         else {
@@ -85,8 +82,8 @@ const cartReducer= (state = initState,action)=>{
             console.log(addedItem.quantity);
             return{
                 ...state,
+                addedItems: [...state.addedItems],
                 total: newTotal,
-                //quantity: state.quantity - 1
             }
         }   
     }

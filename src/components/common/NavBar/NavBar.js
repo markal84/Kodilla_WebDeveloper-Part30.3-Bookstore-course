@@ -12,7 +12,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="navbar text-uppercase">
-        <Logo />  
+        <Logo />
+        <p>change logo link bcs now its resetting app</p>  
         <ul className="nav justify-content-end"> 
           <NavLink to='/' className="nav-link">Home</NavLink>
           <NavLink to='/faq' className="nav-link">Faq</NavLink>
