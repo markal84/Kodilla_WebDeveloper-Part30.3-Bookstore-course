@@ -1,9 +1,99 @@
 import React from 'react';
 
-const Pagination = () => (
-    <div>
-      <h2>This is a Contact page</h2>
-    </div>
-);
+
+class Pagination extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      currentPage: null,
+      pageCount: null
+    }
+  }
+  
+  componentWillMount() {
+    const startingPage = this.props.startingPage
+      ? this.props.startingPage
+      : 1;
+    const data = this.props.data;
+    const pageSize = this.props.pageSize;
+    let pageCount = parseInt(data.length / pageSize);
+    if (data.length % pageSize > 0) {
+      pageCount++;
+    }
+    this.setState({
+      currentPage: startingPage,
+      pageCount: pageCount
+    });
+  }
+  
+  setCurrentPage(num) {
+    this.setState({currentPage: num});
+  }
+
+  createControls() {
+    let controls = [];
+    const pageCount = this.state.pageCount;
+    for (let i = 1; i <= pageCount; i++) {
+      const baseClassName = 'pagination-controls__button';
+      const activeClassName = i === this.state.currentPage ? `${baseClassName}--active` : '';
+      controls.push(
+        <div
+          className={`${baseClassName} ${activeClassName}`}
+          onClick={() => this.setCurrentPage(i)}
+        >
+          {i}
+        </div>
+      );
+    }
+    return controls;
+  }
+
+  createPaginatedData() {
+    const data = this.props.data;
+    const pageSize = this.props.pageSize;
+    const currentPage = this.state.currentPage;
+    const upperLimit = currentPage * pageSize;
+    const dataSlice = data.slice((upperLimit - pageSize), upperLimit);
+    return dataSlice;
+  }
+
+  render() {
+    return (
+      <div className='pagination'>
+        <div className='pagination-controls'>
+          {this.createControls()}
+        </div>
+        <div className='pagination-results'>
+          {React.cloneElement(this.props.children, {data: this.createPaginatedData()})}
+        </div>
+      </div>
+    );
+  }
+}
+
+Pagination.propTypes = {
+  data: React.PropTypes.array.isRequired,
+  pageSize: React.PropTypes.number.isRequired,
+  startingPage: React.PropTypes.number.isRequired
+};
+
+Pagination.defaultProps = {
+  pageSize: 25,
+  startingPage: 1
+};
+
+
+
+/*class App extends React.Component {
+  render() {
+    return (
+      <Pagination
+        data={testData()}
+      >
+        <Example />
+      </Pagination>
+    );
+  }
+} */
 
 export default Pagination;
