@@ -14,9 +14,10 @@ class HomePage extends Component{
           <SortList />
         </div>
         <div className="col-9">
+        <Pagination >
           <ProductList />
+        </Pagination>  
         </div>
-        <Pagination />
       </div>
     )
   }
