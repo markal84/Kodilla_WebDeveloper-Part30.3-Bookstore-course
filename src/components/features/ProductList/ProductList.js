@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../../actions/actions';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import data from '../../../Data/Products.json';
 
@@ -63,7 +64,9 @@ class ProductList extends Component{
                         <p><b>Price: {item.price}$</b></p>
                         <p>Old price: {item.oldPrice}$</p>
                         <p>{item.extra}</p>
-                        <span to="/" className="btn btn-light">Read more-link to SingleProductPage</span>
+                        <Button>
+                            <Link to={`/product/${item.id}`}>Read more</Link>
+                        </Button>
                     </div>
                 </div>
             )
@@ -82,6 +85,7 @@ class ProductList extends Component{
         )
     }
 }
+
 
 
 const mapStateToProps = (state)=>{
