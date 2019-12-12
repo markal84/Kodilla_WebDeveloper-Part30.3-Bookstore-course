@@ -35,24 +35,24 @@ export class ProductItem extends Component {
     const found = data.find(x => x.id === parseFloat(this.props.id));
 
     return <div className='product-item-wrapper'>
-        <h3>Opis książki</h3>
-        <span><img className='product-photo' src={found.imgurl} alt='Book about something'/></span>
-        <h3 className='title'>Tytuł: {found.title}</h3>
-        <h4 className='author'>Autor: {found.author}</h4>
-        <span>Opis: {found.description}</span>
-        <span>Cena: {found.price} zł</span>
-        <Button onClick={()=>this.handleClick(found.id)}>Dodaj do koszyka</Button>
+        <h3>Product summary</h3>
+        <span><img className='product-photo' src={found.img} alt='Product info'/></span>
+        <h3 className='title'>Name: {found.name}</h3>
+        <h4 className='author'>Brand: {found.brand}</h4>
+        <span>Desc: {found.desc}</span>
+        <span> Price: ${found.price}</span>
+        <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Dodano produkt do koszyka</Modal.Title>
+            <Modal.Title>Item added to cart</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <span>Dodano książkę '{found.title}'</span>
-            <span><img className='product-photo-modal' src={found.imgurl} alt='Book about something'/></span>
+            <span>You added '{found.name}' to cart</span>
+            <span><img className='product-photo-modal' src={found.img} alt='Product info'/></span>
           </Modal.Body>
           <Modal.Footer>
             <Button variant='secondary' onClick={this.handleClose}>
-            Zamknij
+            Close
             </Button>
           </Modal.Footer>
         </Modal>
