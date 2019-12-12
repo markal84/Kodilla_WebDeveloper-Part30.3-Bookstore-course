@@ -67,6 +67,7 @@ class ProductList extends Component{
                         <Button>
                             <Link to={`/product/${item.id}`}>Read more</Link>
                         </Button>
+                        <Button onClick={()=>this.handleClick(item.id)}>Add to cart</Button>
                     </div>
                 </div>
             )
