@@ -76,7 +76,7 @@ class ProductList extends Component{
             <div className="col-9">
                 {itemList}
                 <div className='col-3"'>
-                    <h3>Sortuj</h3>
+                    <h3>Sort by:</h3>
                     <Button onClick={() => this.sortByTitle('asc')}>Name A-Z</Button>
                     <Button onClick={() => this.sortByTitle('desc')}>Name Z-A</Button>
                     <Button onClick={() => this.sortByPrice('asc')}>Price Ascending</Button>

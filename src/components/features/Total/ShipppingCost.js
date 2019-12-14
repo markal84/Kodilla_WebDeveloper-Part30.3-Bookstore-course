@@ -1,4 +1,4 @@
-//here you can define shipping cost
+// you can define shipping cost here
 
 const shippingCost = 12;
 

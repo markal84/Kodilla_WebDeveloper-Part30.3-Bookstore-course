@@ -29,7 +29,7 @@ class Total extends Component{
                                 <span>Shipping(+{ shippingCost }$)</span>
                             </label>
                         </li>
-                        <li className="collection-item"><b>Total: {this.props.total} $</b></li>
+                        <li className="collection-item"><b>Total: {this.props.total}$</b></li>
                     </ul>
                     </div>
                     <div className="checkout">

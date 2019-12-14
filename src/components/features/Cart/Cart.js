@@ -23,8 +23,8 @@ class Cart extends Component{
             (  
                 this.props.items.map(item=>{
                     return(
-                       
-                        <li className="collection-item avatar" key={item.id}>
+                       <div>
+                            <li className="collection-item avatar" key={item.id}>
                                     <div className="item-img"> 
                                         <img src={item.img} alt={item.img}/>
                                     </div>                         
@@ -41,9 +41,9 @@ class Cart extends Component{
                                         </div>
                                         <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
                                     </div>
-                                    < Total />                                
-                                </li>
-                                              
+                                                                    
+                            </li>  
+                        </div>                     
                     )
                 })
             ):
@@ -51,16 +51,30 @@ class Cart extends Component{
              (
                 <p>Nothing.</p>
              )
-       return(
-            <div className="container">
-                <div className="cart">
-                    <h5>You have ordered:</h5>
-                    <ul className="collection">
-                        {addedItems}
-                    </ul>
-                </div>      
-            </div>
-       )
+             if (addedItems.length > 0) { //if there is no added items in cart don't show total
+                return( 
+                    <div className="container">
+                        <div className="cart">
+                            <h5>You have ordered:</h5>
+                            <ul className="collection">
+                                {addedItems}
+                            </ul>
+                            < Total />
+                        </div>      
+                    </div>
+               )
+             } else {
+                return( 
+                    <div className="container">
+                        <div className="cart">
+                            <h5>You have ordered:</h5>
+                            <ul className="collection">
+                                {addedItems}
+                            </ul>
+                        </div>      
+                    </div>
+               )
+             }
     }
 }
 const mapStateToProps = (state)=>{
