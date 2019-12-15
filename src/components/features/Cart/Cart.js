@@ -60,7 +60,12 @@ class Cart extends Component{
                                 {addedItems}
                             </ul>
                             < Total />
-                        </div>      
+                        </div>
+                        <form>
+                            Promo code: <br></br>
+                            <input type="text" name="Promo code"></input>
+                            <button name="add code">Add promo code</button>
+                        </form>      
                     </div>
                )
              } else {
@@ -71,7 +76,12 @@ class Cart extends Component{
                             <ul className="collection">
                                 {addedItems}
                             </ul>
-                        </div>      
+                        </div>
+                        <form>
+                            Promo code: <br></br>
+                            <input type="text" name="Promo code"></input>
+                            <button name="add code">Add promo code</button>
+                        </form>  
                     </div>
                )
              }

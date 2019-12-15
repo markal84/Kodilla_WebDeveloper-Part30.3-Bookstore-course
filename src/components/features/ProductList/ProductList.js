@@ -43,13 +43,13 @@ class ProductList extends Component{
         })
       });
     }
-    
 
     handleClick = (id)=>{
-        this.props.addToCart(id);
+      this.props.addToCart(id);
     }
 
     render() {
+        
         let itemList = this.props.items.map(item=>{
             return(
                 <div key={item.id} className="card">
@@ -59,7 +59,6 @@ class ProductList extends Component{
                     <div className="card-body">
                         <h5 className="card-title">{ item.name}</h5>
                         <span>{item.brand}</span>
-                        <span to="/" className="btn btn-light" onClick={()=>{this.handleClick(item.id)}}>add to cart</span>
                         <p className="card-text">{item.desc}</p>
                         <p><b>Price: {item.price}$</b></p>
                         <p>Old price: {item.oldPrice}$</p>
@@ -67,7 +66,6 @@ class ProductList extends Component{
                         <Button>
                             <Link to={`/product/${item.id}`}>Read more</Link>
                         </Button>
-                        <Button onClick={()=>this.handleClick(item.id)}>Add to cart</Button>
                     </div>
                 </div>
             )
