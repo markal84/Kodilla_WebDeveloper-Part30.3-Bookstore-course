@@ -29,7 +29,8 @@ class Cart extends Component{
                                         <img src={item.img} alt={item.img}/>
                                     </div>                         
                                     <div className="item-desc">
-                                        <span className="title">{item.title}</span>
+                                        <h6 className="title">{item.name}</h6>
+                                        <h6>{ item.brand }</h6>
                                         <p>{item.desc}</p>
                                         <p><b>Price: {item.price}$</b></p> 
                                         <p>
@@ -49,7 +50,7 @@ class Cart extends Component{
             ):
 
              (
-                <p>Nothing.</p>
+                <p>Your cart is empty.</p>
              )
              if (addedItems.length > 0) { //if there is no added items in cart don't show total
                 return( 
@@ -60,12 +61,12 @@ class Cart extends Component{
                                 {addedItems}
                             </ul>
                             < Total />
-                        </div>
-                        <form>
+                            <form>
                             Promo code: <br></br>
                             <input type="text" name="Promo code"></input>
                             <button name="add code">Add promo code</button>
-                        </form>      
+                        </form>  
+                        </div>    
                     </div>
                )
              } else {
@@ -76,12 +77,7 @@ class Cart extends Component{
                             <ul className="collection">
                                 {addedItems}
                             </ul>
-                        </div>
-                        <form>
-                            Promo code: <br></br>
-                            <input type="text" name="Promo code"></input>
-                            <button name="add code">Add promo code</button>
-                        </form>  
+                        </div> 
                     </div>
                )
              }

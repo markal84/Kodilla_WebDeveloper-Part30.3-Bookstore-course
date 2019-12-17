@@ -7,11 +7,11 @@ import data from '../../../Data/Products.json';
 
 class ProductList extends Component{
 
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
         this.state = {
           direction: 'asc',
-          data: data
+          data: data,
         };
         this.sortBy = this.sortByPrice.bind(this);
     }
@@ -67,9 +67,11 @@ class ProductList extends Component{
                             <Link to={`/product/${item.id}`}>Read more</Link>
                         </Button>
                     </div>
-                </div>
+                    </div>
             )
-        })
+        });
+
+        
         return(
             <div className="col-9">
                 {itemList}
@@ -84,7 +86,6 @@ class ProductList extends Component{
         )
     }
 }
-
 
 
 const mapStateToProps = (state)=>{

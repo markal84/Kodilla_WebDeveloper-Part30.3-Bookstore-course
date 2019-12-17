@@ -61,6 +61,7 @@ export class ProductItem extends Component {
 }
 
 const mapStateToProps = (state)=>{
+  console.log(state);
   return {
     items: state.items
   }
@@ -70,5 +71,6 @@ const mapDispatchToProps= (dispatch)=>{
       addToCart: (id)=>{dispatch(addToCart(id))}
   }
 }
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(ProductItem)
