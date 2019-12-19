@@ -15,7 +15,7 @@ const FaqPage = () => (
   <p>- Your account must have sufficient points before you can checkout the sample products.</p>
   <p>- Kindly clear all pending payments before another checkout.</p>
   <h5>How can I track my orders &amp; payment?</h5>
-  <p>After logging into your account, the status of your checkout history can be found under Order History. For orders via registered postage, a tracking number (article tracking number) will be given to you after the receipt given from <a href="http://www.singpost.com.sg" target="_blank">Singapore Post Limited (SingPost)</a>.</p>
+  <p>After logging into your account, the status of your checkout history can be found under Order History. For orders via registered postage, a tracking number (article tracking number) will be given to you after the receipt given from Singapore Post Limited (SingPost).</p>
   <h5>How do I cancel my orders before I make a payment?</h5>
   <p>After logging into your account, go to your Shopping Cart. Here, you will be able to make payment or cancel your order. Note: We cannot give refunds once payment is verified.</p>
   <h5>How long will it take for my order to arrive after I make payment?</h5>
@@ -25,7 +25,7 @@ const FaqPage = () => (
   <p>The flat-rate handling fee is <span>S$5.99</span> and it is only applicable to normal samples. For free samples, they are fully paid for and there are no additional charges to deliver the free samples.</p>
   <p>Handling fee covers the delivery, material, labour and logistics cost to support the sampling service. You can redeem up to 4 different samples in each checkout and it is likely that you will find samples bundle with larger supply (up to 1-week supply) on Samplestore.com.</p>
   <h5>How do you ship my orders?</h5>
-  <p>All your orders are sent via <a href="http://www.singpost.com.sg" target="_blank">Singapore Post Limited (SingPost)</a>.</p>
+  <p>All your orders are sent via Singapore Post Limited (SingPost).</p>
   <h5>How do I make payments using Paypal? How does it work?</h5>
   <p>Paypal is the easiest way to make payments online. While checking out your order, you will be redirected to the Paypal website. Be sure to fill in correct details for fast &amp; hassle-free payment processing. After a successful Paypal payment, a payment advice will be automatically generated to Samplestore.com system for your order.</p>
   <p>It's fast, easy &amp; secure.</p>
@@ -35,7 +35,7 @@ const FaqPage = () => (
   <p>Yes! It is commonly misunderstood that a Paypal account is needed in order to make payments through Paypal. The truth is you DO NOT need one, although we strongly recommend you sign up to enjoy the added ease of use.</p>
   <p>Without a Paypal account, all you need is any Debit/Credit card stated below that is supported by Paypal.</p>
   <p>By using Paypal, we can process &amp; deliver your orders to you in a shorter time. Paypal is the easiest &amp; most secure way to make payment online. No account needed.</p>
-  <p>For more details, <a href="https://www.paypal.com/sg/webapps/mpp/how-paypal-works" target="_blank">click here</a> to see how Paypal works for you.</p>
+  <p>For more details, click here to see how Paypal works for you.</p>
 </div>
 );
 

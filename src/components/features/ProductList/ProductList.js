@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addToCart } from '../../../actions/actions';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import TextTruncate from 'react-text-truncate';
 import data from '../../../Data/Products.json';
 
 class ProductList extends Component{
@@ -59,13 +60,16 @@ class ProductList extends Component{
                     <div className="card-body">
                         <h5 className="card-title">{ item.name}</h5>
                         <span>{item.brand}</span>
-                        <p className="card-text">{item.desc}</p>
+                        <TextTruncate
+                          line={2}
+                          element="span"
+                          truncateText="…"
+                          text={item.desc}
+                          textTruncateChild={<Button><Link to={`/product/${item.id}`}>Read more</Link></Button>}
+                        />
                         <p><b>Price: {item.price}$</b></p>
                         <p>Old price: {item.oldPrice}$</p>
                         <p>{item.extra}</p>
-                        <Button>
-                            <Link to={`/product/${item.id}`}>Read more</Link>
-                        </Button>
                     </div>
                     </div>
             )
