@@ -59,7 +59,7 @@ class ProductList extends Component{
                     </div>
                     <div className="card-body">
                         <h5 className="card-title">{ item.name}</h5>
-                        <span>{item.brand}</span>
+                        <span>{item.author}</span>
                         <TextTruncate
                           line={2}
                           element="span"

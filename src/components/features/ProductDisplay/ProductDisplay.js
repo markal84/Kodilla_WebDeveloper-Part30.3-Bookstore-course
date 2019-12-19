@@ -4,6 +4,7 @@ import { addToCart } from '../../../actions/actions';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import data from '../../../Data/Products.json';
+import './ProductDisplay.scss'
 
 export class ProductItem extends Component {
 
@@ -35,12 +36,12 @@ export class ProductItem extends Component {
     const found = data.find(x => x.id === parseFloat(this.props.id));
 
     return <div className='product-item-wrapper'>
-        <h3>Product summary</h3>
         <span><img className='product-photo' src={found.img} alt='Product info'/></span>
         <h3 className='title'>Name: {found.name}</h3>
-        <h4 className='author'>Brand: {found.brand}</h4>
+        <h4 className='author'>Author: {found.author}</h4>
         <span>Desc: {found.desc}</span>
         <span> Price: ${found.price}</span>
+        <span> { found.extra } </span>
         <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
