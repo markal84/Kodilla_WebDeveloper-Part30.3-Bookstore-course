@@ -1,4 +1,4 @@
-/*import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 // import reducers
 import cartReducer from './reducers'
@@ -12,4 +12,4 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 
-export default store;  */
+export default store;  

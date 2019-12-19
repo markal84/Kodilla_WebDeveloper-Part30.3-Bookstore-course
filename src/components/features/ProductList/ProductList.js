@@ -85,6 +85,7 @@ class ProductList extends Component{
                     <Button onClick={() => this.sortByTitle('desc')}>Name Z-A</Button>
                     <Button onClick={() => this.sortByPrice('asc')}>Price Ascending</Button>
                     <Button onClick={() => this.sortByPrice('desc')}>Price Descending</Button>
+                    <Button onClick={() => this.sortByTitle('desc')}>Reset filters</Button>
                 </div>
             </div>
         )

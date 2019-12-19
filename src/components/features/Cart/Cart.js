@@ -30,7 +30,7 @@ class Cart extends Component{
                                     </div>                         
                                     <div className="item-desc">
                                         <h6 className="title">{item.name}</h6>
-                                        <h6>{ item.brand }</h6>
+                                        <h6>{ item.author }</h6>
                                         <p>{item.desc}</p>
                                         <p><b>Price: {item.price}$</b></p> 
                                         <p>

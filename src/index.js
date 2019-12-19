@@ -5,9 +5,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
 
-import cartReducer from './redux/reducers';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import cartReducer from './redux/reducers'; // wille be in store.js once fixed
+import { Provider } from 'react-redux'; // wille be in store.js once fixed
+import { createStore } from 'redux'; // wille be in store.js once fixed
+//import store from './redux/store';
 
 
 const Root = () => (
@@ -23,6 +24,6 @@ const Root = () => (
     cartReducer,
 }); */
 
-const store = createStore(cartReducer);
+const store = createStore(cartReducer); // wille be in store.js once fixed
 
 ReactDOM.render(<Root />, document.getElementById('root'));
