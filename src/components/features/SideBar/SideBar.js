@@ -32,9 +32,9 @@ class SideBar extends React.Component {
 
     return (
       <Pulse>
-        <form className="bikes-list">
+        <form>
           {books.map(item => (
-            <div key={item.id} className="bike">
+            <div key={item.id} className="test">
               <input id={item.id} type="checkbox" onClick={this.handleFilter} />
               <label htmlFor={item.id}>{item.name}</label>
             </div>
