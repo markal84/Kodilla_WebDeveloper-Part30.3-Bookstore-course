@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import "./Pagination.scss";
+import './Pagination.scss';
 
 class Pagination extends React.Component {
   constructor(props, context) {
@@ -12,7 +12,7 @@ class Pagination extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     const startingPage = this.props.startingPage ? this.props.startingPage : 1;
     const data = this.props.items;
     console.log(data);
@@ -77,6 +77,10 @@ class Pagination extends React.Component {
     const currentPage = this.state.currentPage;
     const upperLimit = currentPage * pageSize;
     const dataSlice = data.slice(upperLimit - pageSize, upperLimit);
+    console.log(data);
+    console.log(pageSize);
+    console.log(currentPage);
+    console.log(upperLimit);
     return dataSlice;
   }
 
@@ -99,7 +103,7 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
-  pageSize: 5,
+  pageSize: 6,
   startingPage: 1
 };
 

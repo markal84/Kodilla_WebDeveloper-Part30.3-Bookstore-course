@@ -1,29 +1,59 @@
-import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY } from './actionTypes'
+import {
+  ADD_TO_CART,
+  REMOVE_ITEM,
+  SUB_QUANTITY,
+  ADD_QUANTITY,
+  FILTER_BY_PROMO,
+  PROMO_REMOVED,
+  RESET_FILTERS
+} from "./actionTypes";
 
 //add item to cart
-export const addToCart= (id)=>{
-    return{
-        type: ADD_TO_CART,
-         id }
-}
+export const addToCart = id => {
+  return {
+    type: ADD_TO_CART,
+    id
+  };
+};
 
 //remove item from cart
-export const removeItem= (id)=>{
-    return{
-        type: REMOVE_ITEM,
-         id }
-}
+export const removeItem = id => {
+  return {
+    type: REMOVE_ITEM,
+    id
+  };
+};
 
 //add quantity in cart
-export const addQuantity= (id)=>{
-    return{
-        type: ADD_QUANTITY,
-         id }
-}
+export const addQuantity = id => {
+  return {
+    type: ADD_QUANTITY,
+    id
+  };
+};
 
 //substract quantity cart
-export const subtractQuantity= (id)=>{
-    return{
-        type: SUB_QUANTITY,
-         id }
-}
+export const subtractQuantity = id => {
+  return {
+    type: SUB_QUANTITY,
+    id
+  };
+};
+
+export const filterByPromo = () => {
+  return {
+    type: FILTER_BY_PROMO
+  };
+};
+
+export const promoRemoved = () => {
+  return {
+    type: PROMO_REMOVED
+  };
+};
+
+export const resetFilters = () => {
+  return {
+    type: RESET_FILTERS
+  };
+};
