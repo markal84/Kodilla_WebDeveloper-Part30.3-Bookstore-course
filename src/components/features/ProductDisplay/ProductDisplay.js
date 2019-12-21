@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../../actions/actions';
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import data from '../../../Data/Products.json';
@@ -43,6 +44,9 @@ export class ProductItem extends Component {
         <span> Price: ${found.price}</span>
         <span> { found.extra } </span>
         <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
+        <Button>
+          <Link to={`/`}>Back to main page</Link>
+        </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Item added to cart</Modal.Title>

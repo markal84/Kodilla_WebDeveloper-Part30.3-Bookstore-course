@@ -8,7 +8,11 @@ import {
   SUB_SHIPPING,
   FILTER_BY_PROMO,
   PROMO_REMOVED,
-  RESET_FILTERS
+  RESET_FILTERS,
+  SORT_BY_NAME_ASC,
+  SORT_BY_NAME_DSC,
+  SORT_BY_PRICE_ASC,
+  SORT_BY_PRICE_DSC
 } from "../actions/actionTypes";
 import shippingCost from "../components/features/Total/ShipppingCost";
 
@@ -148,6 +152,51 @@ const cartReducer = (state = initState, action) => {
       items: sortedById
     };
   }
+
+  if (action.type === SORT_BY_NAME_ASC) {
+    let sortedByNameASC = initState.items.sort((a, b) =>
+      a.name > b.name ? 1 : -1
+    );
+    console.log(sortedByNameASC);
+    return {
+      ...state,
+      items: [...sortedByNameASC]
+    };
+  }
+
+  if (action.type === SORT_BY_NAME_DSC) {
+    let sortedByNameDSC = initState.items.sort((a, b) =>
+      b.name > a.name ? 1 : -1
+    );
+    console.log(sortedByNameDSC);
+    return {
+      ...state,
+      items: [...sortedByNameDSC]
+    };
+  }
+  
+  if (action.type === SORT_BY_PRICE_ASC) {
+    let sortedByPriceASC = initState.items.sort((a, b) =>
+      a.price > b.price ? 1 : -1,
+    );
+    console.log(sortedByPriceASC);
+    return {
+      ...state,
+      items: [...sortedByPriceASC]
+    };
+  }
+
+  if (action.type === SORT_BY_PRICE_DSC) {
+    let sortedByPriceDSC = initState.items.sort((a, b) =>
+      b.price > a.price ? 1 : -1
+    );
+    console.log(sortedByPriceDSC);
+    return {
+      ...state,
+      items: [...sortedByPriceDSC]
+    };
+  }
+
   return state;
 };
 

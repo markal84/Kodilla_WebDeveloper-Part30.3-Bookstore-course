@@ -9,11 +9,32 @@ class SideBar extends React.Component {
     const id = e.target.id;
     const checked = e.target.checked;
 
-    if (id === "promo") {
+    if (id === "nameA-Z") {
       if (checked) {
-        return this.props.filterByPromo();
+        return this.props.sortedByNameASC();
       }
-      return this.props.promoRemoved();
+      return this.props.resetFilters();
+    }
+
+    if (id === "nameZ-A") {
+      if (checked) {
+        return this.props.sortedByNameDSC();
+      }
+      return this.props.resetFilters();
+    }
+
+    if (id === "price ascending") {
+      if (checked) {
+        return this.props.sortedByPriceASC();
+      }
+      return this.props.resetFilters();
+    }
+
+    if (id === "price descending") {
+      if (checked) {
+        return this.props.sortedByPriceDSC();
+      }
+      return this.props.resetFilters();
     }
   };
 
@@ -27,15 +48,18 @@ class SideBar extends React.Component {
 
   render() {
     const resetData = [{ id: "reset", name: "reset filters" }];
-
-    const books = [{ id: "promo", name: "promo" }];
-
+    const books = [
+      { id: "nameA-Z", name: "nameA-Z" },
+      { id: "nameZ-A", name: "nameZ-A" },
+      { id: "price ascending", name: "price ascending" },
+      { id: "price descending", name: "price descending" },
+    ];
     return (
       <Pulse>
-        <form>
+        <form className="books-list">
           {books.map(item => (
-            <div key={item.id} className="test">
-              <input id={item.id} type="checkbox" onClick={this.handleFilter} />
+            <div key={item.id} className="book">
+              <input id={item.id} type="radio" onClick={this.handleFilter} name="sorting" />
               <label htmlFor={item.id}>{item.name}</label>
             </div>
           ))}

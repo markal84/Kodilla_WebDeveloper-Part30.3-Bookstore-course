@@ -22,8 +22,7 @@ const Product = props => {
         <span className='product-author'>brand: {props.brand}</span>
         <span className='product-price '>Price: ${props.price}</span>
         <span className={'product-old-price ' + ((props.oldPrice) ? 'show' : 'hidden')}>Old prie: ${props.old_price}</span>
-        <span className={'product-info ' + ((props.extra[0]) ? 'show' : 'hidden')}>{props.extra[0]}!!!</span>
-        <span className={'product-info ' + ((props.extra[1]) ? 'show' : 'hidden')}>{props.extra[1]}!!!</span>
+        <span className={'product-info ' + ((props.extra) ? 'show' : 'hidden')}>{props.extra}!!!</span>
       </div>
     </Link>
   );
