@@ -61,10 +61,13 @@ class Cart extends Component{
                                 {addedItems}
                             </ul>
                             < Total />
-                            <form>
+                        <form>
                             Promo code: <br></br>
                             <input type="text" name="Promo code"></input>
                             <button name="add code">Add promo code</button>
+                            <div className="checkout">
+                             <button>Checkout</button>
+                            </div>
                         </form>  
                         </div>    
                     </div>

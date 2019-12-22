@@ -4,7 +4,7 @@ import { addToCart } from "../../../actions/actions";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import TextTruncate from "react-text-truncate";
-//import Pulse from "react-reveal/Pulse";
+import Pulse from "react-reveal/Pulse";
 
 class ProductList extends Component {
   handleClick = id => {
@@ -16,7 +16,9 @@ class ProductList extends Component {
       return (
         <div key={item.id} className="card">
           <div>
-            <img src={item.img} className="card-img-top" alt={item.name} />
+            <Link to={`/product/${item.id}`}>
+              <img src={item.img} className="card-img-top" alt={item.name} />
+            </Link>
           </div>
           <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
@@ -44,7 +46,7 @@ class ProductList extends Component {
 
     return (
       <div className="col-9">
-        {itemList}
+        <Pulse>{ itemList }</Pulse>
       </div>
     );
   }

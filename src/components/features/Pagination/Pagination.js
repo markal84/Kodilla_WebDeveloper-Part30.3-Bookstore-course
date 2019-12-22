@@ -12,7 +12,7 @@ class Pagination extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const startingPage = this.props.startingPage ? this.props.startingPage : 1;
     const data = this.props.items;
     console.log(data);

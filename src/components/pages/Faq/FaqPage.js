@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FaqPage = () => (
-<div class="col-half-left">
+<div>
   <h5>How can I change my shipping address?</h5>
   <p>By default, the last used shipping address will be saved into to your Sample Store account. When you are checking out your order, the default shipping address will be displayed and you have the option to amend it if you need to.</p>
   <h5>How do I activate my account?</h5>

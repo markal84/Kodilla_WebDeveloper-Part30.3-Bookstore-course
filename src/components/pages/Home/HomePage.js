@@ -6,14 +6,16 @@ import ProductList from "../../features/ProductList/ProductList";
 class HomePage extends Component {
   render() {
     return (
-      <div className="d-flex row">
-        <div className="col-12">
-          <SideBar />
-          <Pagination>
-            <ProductList />
-          </Pagination>
+      <div className="row">
+          <div className="col-3">
+            <SideBar />
+          </div>
+          <div className="col-9">
+            <Pagination>
+              <ProductList />
+            </Pagination>
+          </div>
         </div>
-      </div>
     );
   }
 }

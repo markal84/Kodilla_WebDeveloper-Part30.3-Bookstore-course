@@ -1,9 +1,12 @@
 import React from 'react';
-
-import logoimg from '../../../images/logo/logo.jpg'
+import { Link } from "react-router-dom";
+import logoimg from '../../../images/logo/logo.png'
 
 const Logo = () => (
-    <a href="/" className="navbar-brand"><img src={logoimg} alt="Computer shop"></img></a>    
+    <Link to={'/'}>
+        <img src={logoimg} alt="Computer shop" className="navbar-brand"></img> 
+    </Link>
+      
 );
 
 export default Logo;
