@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import './Cart.scss'
 
 
 class Cart extends Component{
@@ -43,8 +44,8 @@ class Cart extends Component{
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
                                         <div className="add-remove">
-                                            <Link to="/cart"><FontAwesomeIcon icon={faChevronUp} onClick={()=>{this.handleSubtractQuantity(item.id)}}/>Add quantity</Link>
-                                            <Link to="/cart" className="ml-4"><FontAwesomeIcon icon={faChevronDown} onClick={()=>{this.handleSubtractQuantity(item.id)}}/>Remove quantity</Link>
+                                            <Link to="/cart" onClick={()=>{this.handleAddQuantity(item.id)}}><FontAwesomeIcon icon={faChevronUp}/>Add quantity</Link>
+                                            <Link to="/cart" className="ml-4"  onClick={()=>{this.handleSubtractQuantity(item.id)}}><FontAwesomeIcon icon={faChevronDown}/>Remove quantity</Link>
                                         </div>
                                         <Button className="btn btn-danger mt-3" onClick={()=>{this.handleRemove(item.id)}}>Remove item</Button>
                                     </div>
