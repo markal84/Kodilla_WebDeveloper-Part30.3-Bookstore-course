@@ -18,7 +18,7 @@ class NavBar extends React.Component {
           <NavLink excat to='/faq' className="nav-link">Faq</NavLink>
           <NavLink exact to='/terms' className="nav-link">Terms</NavLink>
           <NavLink exact to='/contact' className="nav-link">Contact</NavLink>
-          <NavLink exact to='/cart' className="nav-link">Cart<FontAwesomeIcon className='cart-icon' icon={faCartPlus}/></NavLink>
+          <NavLink exact to='/cart' className="nav-link">Cart<FontAwesomeIcon className='cart-icon ml-1' icon={faCartPlus}/></NavLink>
         </ul>
       </nav>   
     );

@@ -36,7 +36,7 @@ class ProductList extends Component {
               }
             />
             <p className="mt-3">
-              <b>Price: {item.price}$</b>
+              <h4>Price: {item.price}$</h4>
             </p>
             <p><del>Old price: {item.oldPrice}$</del></p>
             <p className="text-uppercase font-weight-bold">{item.extra}</p>

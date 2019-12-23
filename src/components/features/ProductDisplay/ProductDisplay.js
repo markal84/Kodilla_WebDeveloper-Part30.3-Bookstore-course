@@ -41,7 +41,7 @@ export class ProductItem extends Component {
         <h3 className='title mt-3'>Name: {found.name}</h3>
         <h4 className='author'>Author: {found.author}</h4>
         <span>Desc: {found.desc}</span>
-        <div className="mt-3"><b> Price: ${found.price}</b></div> 
+        <div className="mt-3"><h4> Price: ${found.price}</h4></div> 
         <span className="text-uppercase font-weight-bold"> { found.extra } </span>
         <div className="mt-3 d-flex justify-content-around">
           <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
@@ -54,7 +54,7 @@ export class ProductItem extends Component {
             <Modal.Title>Item added to cart</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <span>You added '{found.name}' to cart</span>
+            <span className="mr-2">You added '<b>{found.name}</b>' to cart</span>
             <span><img className='product-photo-modal' src={found.img} alt='Product info'/></span>
           </Modal.Body>
           <Modal.Footer>
