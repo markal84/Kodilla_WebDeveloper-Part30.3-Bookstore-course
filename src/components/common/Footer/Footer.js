@@ -7,10 +7,10 @@ class Footer extends React.Component {
     return (
       <div className="text-uppercase float-right">
         <div className="d-inline-flex">
-          <Link to='/' className="nav-link active">Home</Link>
-          <Link to='/faq' className="nav-link active">Faq</Link>
-          <Link to='/terms' className="nav-link active">Terms</Link>
-          <Link to='/contact' className="nav-link active">Contact</Link>
+          <Link exact to='/' className="nav-link">Home</Link>
+          <Link exact to='/faq' className="nav-link">Faq</Link>
+          <Link exact to='/terms' className="nav-link">Terms</Link>
+          <Link exact to='/contact' className="nav-link">Contact</Link>
         </div>
       </div>
     );

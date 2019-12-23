@@ -45,7 +45,7 @@ class ProductList extends Component {
     });
 
     return (
-      <div className="col-9">
+      <div>
         <Pulse>{ itemList }</Pulse>
       </div>
     );

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Pulse from "react-reveal/Pulse";
 import * as actions from "../../../actions/actions";
+import './SideBar.scss'
 
 class SideBar extends React.Component {
   handleFilter = e => {
@@ -56,12 +57,13 @@ class SideBar extends React.Component {
     ];
     return (
       <Pulse>
-        <form className="books-list">
+        <div className="mb-3 font-weight-bold">Sort list by:</div>
+        <form className="books-sort">
           {books.map(item => (
             <div key={item.id} className="book">
               <input id={item.id} type="radio" onClick={this.handleFilter} name="sorting" />
               <label htmlFor={item.id}>{item.name}</label>
-            </div>
+            </div>  
           ))}
 
           <div className="line" />
