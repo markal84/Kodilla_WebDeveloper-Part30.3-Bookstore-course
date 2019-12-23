@@ -50,8 +50,8 @@ class SideBar extends React.Component {
   render() {
     const resetData = [{ id: "reset", name: "reset filters" }];
     const books = [
-      { id: "nameA-Z", name: "nameA-Z" },
-      { id: "nameZ-A", name: "nameZ-A" },
+      { id: "nameA-Z", name: "name A-Z" },
+      { id: "nameZ-A", name: "name Z-A" },
       { id: "price ascending", name: "price ascending" },
       { id: "price descending", name: "price descending" },
     ];

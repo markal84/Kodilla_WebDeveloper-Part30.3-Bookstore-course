@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import data from '../../../Data/Products.json';
-import './ProductDisplay.scss'
+import '../ProductList/ProductList.scss';
 
 export class ProductItem extends Component {
 
@@ -38,15 +38,17 @@ export class ProductItem extends Component {
 
     return <div className='product-item-wrapper'>
         <span><img className='product-photo' src={found.img} alt='Product info'/></span>
-        <h3 className='title'>Name: {found.name}</h3>
+        <h3 className='title mt-3'>Name: {found.name}</h3>
         <h4 className='author'>Author: {found.author}</h4>
         <span>Desc: {found.desc}</span>
-        <span> Price: ${found.price}</span>
-        <span> { found.extra } </span>
-        <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
-        <Button>
-          <Link to={`/`}>Back to main page</Link>
-        </Button>
+        <div className="mt-3"><b> Price: ${found.price}</b></div> 
+        <span className="text-uppercase font-weight-bold"> { found.extra } </span>
+        <div className="mt-3 d-flex justify-content-around">
+          <Button onClick={()=>this.handleClick(found.id)}>Add to cart</Button>
+          <Button>
+            <Link className="link-text" to={`/`}>Back to main page</Link>
+          </Button>
+        </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Item added to cart</Modal.Title>

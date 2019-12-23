@@ -5,7 +5,7 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div className="text-uppercase float-right">
+      <div className="text-uppercase float-right mt-4">
         <div className="d-inline-flex">
           <Link exact to='/' className="nav-link">Home</Link>
           <Link exact to='/faq' className="nav-link">Faq</Link>

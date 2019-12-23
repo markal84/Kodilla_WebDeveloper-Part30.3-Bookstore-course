@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeItem,addQuantity,subtractQuantity} from '../../../actions/actions';
 import Total from '../../features/Total/Total';
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+
 class Cart extends Component{
 
     //to remove the item completely
@@ -29,7 +35,7 @@ class Cart extends Component{
                                         <img src={item.img} alt={item.img}/>
                                     </div>                         
                                     <div className="item-desc">
-                                        <h6 className="title">{item.name}</h6>
+                                        <h5 className="title mt-4">{item.name}</h5>
                                         <h6>{ item.author }</h6>
                                         <p>{item.desc}</p>
                                         <p><b>Price: {item.price}$</b></p> 
@@ -37,10 +43,10 @@ class Cart extends Component{
                                             <b>Quantity: {item.quantity}</b> 
                                         </p>
                                         <div className="add-remove">
-                                            <Link to="/cart"><i onClick={()=>{this.handleAddQuantity(item.id)}}>arrow_drop_up</i></Link>
-                                            <Link to="/cart"><i onClick={()=>{this.handleSubtractQuantity(item.id)}}>arrow_drop_down</i></Link>
+                                            <Link to="/cart"><FontAwesomeIcon icon={faChevronUp} onClick={()=>{this.handleSubtractQuantity(item.id)}}/>Add quantity</Link>
+                                            <Link to="/cart" className="ml-4"><FontAwesomeIcon icon={faChevronDown} onClick={()=>{this.handleSubtractQuantity(item.id)}}/>Remove quantity</Link>
                                         </div>
-                                        <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
+                                        <Button className="btn btn-danger mt-3" onClick={()=>{this.handleRemove(item.id)}}>Remove item</Button>
                                     </div>
                                                                     
                             </li>  
@@ -64,9 +70,9 @@ class Cart extends Component{
                         <form>
                             Promo code: <br></br>
                             <input type="text" name="Promo code"></input>
-                            <button name="add code">Add promo code</button>
-                            <div className="checkout">
-                             <button>Checkout</button>
+                            <Button className="btn btn-primary ml-3">Add promo code</Button>
+                            <div>
+                             <Button className="btn btn-success mt-3">Checkout</Button>
                             </div>
                         </form>  
                         </div>    

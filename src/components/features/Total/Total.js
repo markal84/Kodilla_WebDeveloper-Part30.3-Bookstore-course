@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import shippingCost from './ShipppingCost'
+import shippingCost from './ShipppingCost';
+import './Total.scss'
 
 class Total extends Component{
 
@@ -22,14 +23,14 @@ class Total extends Component{
         return(
             <div className="container">
                 <div className="collection">
-                    <ul>
+                    <ul className="total">
                         <li className="collection-item">
                             <label>
                                 <input type="checkbox" ref="shipping" onChange= {this.handleChecked} />
                                 <span>Shipping(+{ shippingCost }$)</span>
                             </label>
                         </li>
-                        <li className="collection-item"><b>Total: {this.props.total}$</b></li>
+                        <li className="collection-item"><h4>Total: {this.props.total}$</h4></li>
                     </ul>
                     </div>
             </div>
